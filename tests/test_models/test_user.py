@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import unittest
 import models
 from models.base_model import BaseModel
@@ -25,7 +26,8 @@ class TestUserClass(unittest.TestCase):
         self.assertIsNotNone(self.user.updated_at)
 
     def test_user_str_representation(self):
-        expected_output = "[User] ({}) {}".format(self.user.id, self.user.__dict__)
+        expected_output = "[User] ({}) {}".format(self.user.id,
+                                                  self.user.__dict__)
         self.assertEqual(str(self.user), expected_output)
 
 

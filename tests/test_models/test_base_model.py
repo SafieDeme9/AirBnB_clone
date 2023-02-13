@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import unittest
 from models.base_model import BaseModel
 from datetime import datetime
@@ -24,8 +25,12 @@ class TestBaseModel(unittest.TestCase):
         }
         bm = BaseModel(**bm_dict)
         self.assertEqual(bm.id, bm_dict['id'])
-        self.assertEqual(bm.created_at, datetime.strptime(bm_dict['created_at'], '%Y-%m-%dT%H:%M:%S.%f'))
-        self.assertEqual(bm.updated_at, datetime.strptime(bm_dict['updated_at'], '%Y-%m-%dT%H:%M:%S.%f'))
+        self.assertEqual(bm.created_at, datetime.
+                         strptime(bm_dict['created_at'],
+                                  '%Y-%m-%dT%H:%M:%S.%f'))
+        self.assertEqual(bm.updated_at, datetime.
+                         strptime(bm_dict['updated_at'],
+                                  '%Y-%m-%dT%H:%M:%S.%f'))
         self.assertEqual(bm.foo, bm_dict['foo'])
 
     def test_save(self):
