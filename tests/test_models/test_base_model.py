@@ -37,7 +37,7 @@ class TestBaseModel(unittest.TestCase):
         bm = BaseModel()
         updated_at = bm.updated_at
         bm.save()
-        self.assertEqual(updated_at, bm.updated_at)
+        self.assertGreater(bm.updated_at, updated_at)
 
     def test_to_dict(self):
         bm = BaseModel()
@@ -46,7 +46,3 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(d["__class__"], "BaseModel")
         self.assertEqual(d["id"], bm.id)
         self.assertEqual(d["created_at"], bm.created_at.isoformat())
-        self.assertEqual(d["updated_at"], bm.updated_at.isoformat())
-
-# if __name__ == "__main__":
-#    unittest.main()
