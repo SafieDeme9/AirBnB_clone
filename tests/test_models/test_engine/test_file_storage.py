@@ -7,7 +7,7 @@ from models.engine.file_storage import FileStorage
 
 
 class TestFileStorage(unittest.TestCase):
-    """ """
+    """ Tests for the FileStorage class"""
     def setUp(self):
         """ method creates an instance of the FileStorage class
             before each test is run
@@ -20,6 +20,13 @@ class TestFileStorage(unittest.TestCase):
             os.remove("file.json")
         except Exception as excpt:
             pass
+
+    def test_objects(self):
+        """Test the __objects method"""
+        storage = FileStorage()
+        all_objs = storage.all()
+        self.assertIsInstance(all_objs, dict)
+        self.assertEqual(all_objs, storage._FileStorage__objects)
 
     def test_all(self):
         """ verifies that the all method returns a dictionary object """
