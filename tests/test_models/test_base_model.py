@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-import unittest
-from models.base_model import BaseModel
-from datetime import datetime
-
 """
 Test base model
 """
+
+import unittest
+from models.base_model import BaseModel
+from datetime import datetime
 
 
 class TestBaseModel(unittest.TestCase):

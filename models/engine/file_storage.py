@@ -43,5 +43,9 @@ class FileStorage:
         try:
             with open(FileStorage.__file_path, encoding="UTF8") as fl:
                 FileStorage.__objects = json.load(fl)
-        except Exception as excpt:
+            for key, val in FileStorage.__objects.items():
+                class_name = val["__class__"]
+                class_name = models.classes[class_name]
+                FileStorage.__objects[key] = class_name(**val)
+        except Exception as excpst:
             pass
