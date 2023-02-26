@@ -6,9 +6,26 @@
     border-radius: 4px;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+}
+.locations, .amenities {
+    height: 100%;
+    width: 25%;
+}
+.locations {
+    border-right: 1px solid #DDDDDD;
+}
+.filters h3 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+  
+.filters h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: auto;
 }
 .filters button {
     background-color: #FF5A5F;
